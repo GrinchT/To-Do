@@ -1,0 +1,362 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+
+    background-color: var(--page-bg);
+    color: var(--page-text);
+}
+
+
+:root{
+    --white: #fff;
+    --black: #1c1b1b;
+
+    --page-bg: var(--white);
+    --page-text: var(--black);
+}
+
+
+
+#main__title{
+    font-size: 60px;
+    color: var(--page-text);
+}
+
+.night{
+    --page-bg: var(--black);
+    --page-text: var(--white);
+}
+
+
+.none {
+    display: none !important;
+}
+
+.task-strike {
+    text-decoration: line-through;
+    color: rgb(124, 124, 122);
+}
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Playfair Display', serif;
+    margin: auto;
+    width: fit-content;
+    height: auto;
+
+
+}
+
+.night__mode{
+    position: absolute;
+    top: 20px;
+    right: 5px;
+}
+
+.btn{
+    border-style: none;
+    cursor: pointer;
+
+    background-color: var(--page-bg);
+
+}
+
+
+/* tasklist */
+
+.task-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: auto;
+    height: auto;
+}
+
+.tasks #empty-list {
+    display: flex;
+    justify-content: center;
+    margin: 100px auto;
+    font-size: 50px;
+    font-family: 'Playfair Display', serif;
+    border: none;
+    width: auto;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-style: solid;
+    margin-top: 8px;
+    border-radius: 3px;
+    padding: 15px;
+
+}
+
+.task-content{
+    width: 380px;
+    resize: none;
+    hyphens: auto;
+}
+
+
+
+.task-list ul {
+    margin: auto;
+    margin-top: 25px;
+    width: 500px;
+    height: 300px;
+    font-size: 20px;
+    font-family: 'PT Sans Caption', sans-serif;
+    overflow: auto;
+
+}
+
+.task-item img {
+    pointer-events: none;
+}
+
+
+
+/* buttons */
+
+.task-item .task-content {
+    flex-grow: 1;
+    /* Растягивает текст задачи, чтобы занимал оставшееся пространство */
+}
+
+.task-item button {
+    border-style: none;
+    cursor: pointer;
+    transition: 0.6;
+
+    background-color: var(--page-bg); 
+    color: var(--page-text);
+}
+
+.task-item button:active {
+    transform: scale(0.9);
+}
+
+
+.task-buttons {
+    display: flex;
+    align-items: center;
+    column-gap: 6px;
+    margin-left: 5px;
+}
+
+
+
+
+form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 50px;
+}
+
+input[type=text] {
+    width: 300px;
+    height: 50px;
+    padding: 20px;
+    border: 2px solid;
+    cursor: text;
+    transition: 0.4s;
+
+    color: var(--page-text);
+    background-color: var(--page-bg);
+}
+
+input[type=text]:hover {
+    box-shadow: 0.3rem 0.3rem 0 ;
+    transform: translate(-0.3rem, -0.3rem);
+
+}
+
+input[type=button] {
+    width: 30%;
+    padding: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    border: 2px solid;
+    transition: 0.4s;
+
+    color: var(--page-text);
+    background-color: var(--page-bg); 
+}
+
+
+input[type=button]:hover {
+    box-shadow: 0.3rem 0.3rem 0 black;
+    transform: translate(-0.3rem, -0.3rem);
+    background-color: rgba(182, 36, 36, 0.743);
+
+}
+
+
+input[type=submit] {
+    width: 40%;
+    padding: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    border: 2px solid;
+    transition: 0.4s;
+
+    color: var(--page-text);
+    background-color: var(--page-bg);
+}
+
+
+input[type=submit]:hover {
+    box-shadow: 0.3rem 0.3rem 0 var(--page-text);
+    transform: translate(-0.3rem, -0.3rem);
+
+}
+
+/* adabtive */
+
+@media screen and (max-width: 1200px) {}
+
+@media screen and (max-width: 992px) {}
+
+@media screen and (max-width: 768px) {
+
+    /* .tasks{
+        display: flex;
+        width: auto;
+        flex-flow: column wrap;
+    } */
+
+    .task-list li {
+        margin-right: 10px;
+    }
+
+
+    form {
+        display: flex;
+        flex-flow: column, wrap;
+        justify-content: center;
+        width: auto;
+        gap: 5px;
+        margin-top: 20px;
+    }
+
+    input[type=submit] {
+        width: 10em;
+        padding: 5px;
+        margin-left: 10px;
+        cursor: pointer;
+        border: 3px solid;
+        transition: 0.4s;
+    }
+
+    input[type=button] {
+        width: 7em;
+        padding: 10px;
+        margin-left: 10px;
+        cursor: pointer;
+        border: 3px solid;
+        transition: 0.4s;
+    }
+
+    input[type=text] {
+        width: 15em;
+        height: 30px;
+        padding: 20px;
+        border: 3px solid;
+        cursor: text;
+        transition: 0.3s;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+
+
+    .task-list ul {
+        height: 300px;
+        width: 400px;
+        overflow: auto;
+    }
+
+    .task-list li {
+        margin: 5px 20px;
+
+    }
+
+    .night__mode{
+        top: 15px;
+        right: 10px;
+    }
+
+
+    .form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+
+    form {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        row-gap: 15px;
+        margin: 30px auto;
+        width: 100%;
+    }
+
+
+    input[type=button] {
+        width: 7em;
+        padding: 10px;
+        cursor: pointer;
+        border: 3px solid;
+    }
+
+    input[type=button]:hover{
+        transition: none;
+        transform: none;
+        box-shadow: none;
+        background-color: var(--page-bg);
+    }
+
+    input[type=submit] {
+        width: 11em;
+        padding: 12px;
+        background-color: var(--page-bg);
+        color: var(--page-text);
+        cursor: pointer;
+        border: 3px solid;
+        transition: 0.4s;
+    }
+
+    input[type=submit]:hover{
+        transition: none;
+        transform: none;
+        box-shadow: none;
+        background-color: var(--page-bg);
+
+    }
+
+    input[type=text]:hover {
+        transition: none;
+        transform: none;
+        box-shadow: none;
+        background-color: var(--page-bg);
+    }
+
+}
